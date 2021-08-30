@@ -77,7 +77,7 @@ function check_board_setup
     echo "a USB port and in Force Recovery Mode"
     exit 1
   else
-    if [[ $FLASH_BOARDID == *"jetson-xavier-nx-devkit"* ]] ; then
+    if [[ $FLASH_BOARDID == *"jetson-xavier-nx-devkit"* ]] || [[ $FLASH_BOARDID == *"jetson-agx-xavier-devkit "* ]] ; then
       echo "$FLASH_BOARDID" | grep found
       read -p "Make sure the force recovery jumper is removed. Continue (Y/n)?" answer
       case ${answer:0:1} in
@@ -89,7 +89,7 @@ function check_board_setup
         ;;
       esac
     else
-      if [[ $FLASH_BOARDID == *"jetson-xavier-nx-devkit"* ]] ; then
+      if [[ $FLASH_BOARDID == *"jetson-xavier-nx-devkit"* ]] || [[ $FLASH_BOARDID == *"jetson-agx-xavier-devkit "* ]] ; then
          echo "$FLASH_BOARDID" | grep found
       else
          echo "$FLASH_BOARDID" | grep found
